@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 
 
 class MyCard1 extends StatelessWidget {
-  const MyCard1({super.key});
+  String temp;
+  String time;
+  final IconData icon;
+  MyCard1({required this.temp,required this.time,required this.icon});
 
   @override
   Widget build(BuildContext context) {
@@ -12,21 +15,24 @@ class MyCard1 extends StatelessWidget {
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(13)),
                     elevation: 6,
-                    child: const Padding(
+                    child:  Padding(
                       padding: EdgeInsets.all(8.0),
                       child: Column(children: [
                         Text(
-                          "03:00",
+                          
+                          time,
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
                           style: TextStyle(fontSize: 20),
                         ),
-                        SizedBox(
+                       const SizedBox(
                           height: 10,
                         ),
-                        Icon(Icons.cloud),
-                        SizedBox(
+                        Icon(icon),
+                       const  SizedBox(
                           height: 10,
                         ),
-                        Text("301.17")
+                        Text(temp)
                       ]),
                     ),
                   ),

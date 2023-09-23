@@ -1,0 +1,1 @@
+const openApiKey="8cb992298190b3408c57b34661604a23";
